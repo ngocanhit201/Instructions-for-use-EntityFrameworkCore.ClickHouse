@@ -1,4 +1,5 @@
 using ClickHouse.EntityFrameworkCore.Extensions;
+//using GenerateEntity.Models;
 using GenerateEntity.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,9 +10,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
 builder.Services.AddDbContext<MyDbContext>(options =>
 {
-	options.UseClickHouse();
+    options.UseClickHouse();
 });
 
 var app = builder.Build();

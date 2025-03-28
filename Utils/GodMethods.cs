@@ -1,5 +1,5 @@
 ﻿using ClickHouse.Client.ADO;
-using GenerateEntity.Models;
+//using GenerateEntity.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;

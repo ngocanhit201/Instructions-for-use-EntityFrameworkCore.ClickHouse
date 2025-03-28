@@ -19,21 +19,22 @@ namespace GenerateEntity.Controllers
 		[HttpGet]
 		public async Task<IActionResult> OneEntity()
 		{
-			var userQuery = _context.Users.Where(e => e.Name == "four").ToQueryString();
+			var user = _context.Users.Where(e => true);
+			//var user = _context.Users.FirstOrDefault(e => e.Name == "string");
 
-			var result = GodMethods.ExecuteQueryClickhouse<List<User>>(userQuery);
 
-			return Ok(result);
+			return Ok(user);
 
 		}
 		[HttpGet]
 		public async Task<IActionResult> ListEntity()
 		{
-			var userQuery = _context.Users;
+			var userQuery = _context.Users.Where(e => true).ToQueryString();
 
 			//var result = GodMethods.ExecuteQueryClickhouse<List<User>>(userQuery);
+			var result = GodMethods.ExecuteQueryClickhouse<List<User>>(userQuery);
 
-			return Ok(userQuery);
+			return Ok(result);
 
 		}
 
