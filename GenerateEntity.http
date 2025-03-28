@@ -1,0 +1,6 @@
+@GenerateEntity_HostAddress = http://localhost:5100
+
+GET {{GenerateEntity_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
